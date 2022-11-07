@@ -3,7 +3,7 @@
   // facebookClientSecret: FACEBOOK_CLIENT_SECRET
 
 module.exports = {
-  googleClientID: "538841350108-7vnjkt52bta4i8umfsbg62lbaf509urs.apps.googleusercontent.com",
+  googleClientID: process.env.GOOGLE_CLIENT_ID,
   googleClientSecret: process.env.GOOGLE_CLIENT_SECRET,
   mongoURI: process.env.MONGO_URI,
   cookieKey: process.env.COOKIE_KEY

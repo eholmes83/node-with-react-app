@@ -32,16 +32,18 @@ passport.use(new GoogleStrategy({
   })
 )
 
-passport.use(new FacebookStrategy({
-  clientID: keys.facebookClientID,
-  clientSecret: keys.facebookClientSecret,
-  callbackURL: '/auth/facebook/callback',
-  proxy: true,
-  profileFields: ['id', 'email', 'name']
-}, (accessToken, refreshToken, profile, done) => {
-  User.findOne({ facebookId: profile.id })
-    .then((existingUser) => { existingUser ? done(null, existingUser) : new User({ facebookId: profile.id }).save()
-    .then(user => done(null, user)) 
-    })
-  })
-)
+// Use below for facebook strategy
+
+// passport.use(new FacebookStrategy({
+//   clientID: keys.facebookClientID,
+//   clientSecret: keys.facebookClientSecret,
+//   callbackURL: '/auth/facebook/callback',
+//   proxy: true,
+//   profileFields: ['id', 'email', 'name']
+// }, (accessToken, refreshToken, profile, done) => {
+//   User.findOne({ facebookId: profile.id })
+//     .then((existingUser) => { existingUser ? done(null, existingUser) : new User({ facebookId: profile.id }).save()
+//     .then(user => done(null, user)) 
+//     })
+//   })
+// )
